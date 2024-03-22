@@ -13,7 +13,8 @@ const int PIN_ETH_INT = 9;
 esp_err_t init_spi(spi_host_device_t spi_host, int miso, int mosi, int sck,
                    int cs, uint32_t baudrate, spi_device_handle_t &handle) {
   spi_bus_config_t buscfg = {};
-  buscfg.miso_io_num = miso, buscfg.mosi_io_num = mosi;
+  buscfg.miso_io_num = miso;
+  buscfg.mosi_io_num = mosi;
   buscfg.sclk_io_num = sck;
   buscfg.quadwp_io_num = -1;
   buscfg.quadhd_io_num = -1;
